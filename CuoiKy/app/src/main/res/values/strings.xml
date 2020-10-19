@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Simple Gallery</string>
+    <string name="main_title">MY GALERY</string>
+    <string name="main_featured">Featured</string>
 </resources>
