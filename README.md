@@ -3,5 +3,6 @@
 1. git add .
 2. git commit -m "Your message"
 3. git push origin master
-> Success ###Skip
+> Success thì Skip
+4. Nếu lỗi thì
 > Error (Không push lên đc) > git push -f origin master
