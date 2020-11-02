@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#FFFFFF"
     android:orientation="vertical"
     tools:layout_editor_absoluteX="148dp"
     tools:layout_editor_absoluteY="120dp">
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/picture"
         android:layout_width="match_parent"
-        android:layout_height="654dp"
-        tools:srcCompat="@tools:sample/avatars" />
+        android:layout_height="670dp"
+        tools:srcCompat="@tools:sample/avatars"
+        android:scaleType="fitXY"/>
 
     <LinearLayout
         android:layout_width="match_parent"
