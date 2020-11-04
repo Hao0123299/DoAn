@@ -36,21 +36,9 @@
         android:paddingRight="10dp">
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/btnFacebook"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="#EC1C1C"
-            android:text="Google"
-            android:textColor="#FFFFFF"
-            android:textStyle="bold" />
-
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginLeft="10dp"
             android:layout_weight="1"
             android:background="#3F51B5"
             android:text="Facebook"
@@ -68,25 +56,15 @@
         android:paddingRight="10dp">
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/btnChung"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="#E13467"
-            android:text="Instagram"
+            android:text="Other"
             android:textColor="#FFFFFF"
             android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/button4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_weight="1"
-            android:background="#2196F3"
-            android:text="Twitter"
-            android:textColor="#FFFFFF" />
     </LinearLayout>
 
     <TextView
@@ -98,7 +76,7 @@
         android:textColor="#0E0E0E" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/btnSetBackground"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -111,7 +89,7 @@
         android:textStyle="bold" />
 
     <Button
-        android:id="@+id/button6"
+        android:id="@+id/btnDelete"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"

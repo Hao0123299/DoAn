@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
     boolean boolean_folder;
     GridView gv_folder;
     private static final int REQUEST_PERMISSIONS = 100;
+    private static final int REQUEST_CODE_IMAGE = 400;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
                                     int position, long arg3) {
                 if (null != images && !images.isEmpty())
                     intent.putExtra("image_uri", images.get(position));
-                    startActivity(intent);
+                    startActivityForResult(intent, REQUEST_CODE_IMAGE);
                 ;
 
             }
@@ -75,52 +76,66 @@ public class MainActivity extends AppCompatActivity {
 
     public void setCurrentImage(){
         final ImageView image1, image2, image3;
+
         final Intent intent = new Intent(MainActivity.this, PictureActivity.class);
-        image1 = (ImageView) findViewById(R.id.picture1);
-        image2 = (ImageView) findViewById(R.id.picture2);
-        image3 = (ImageView) findViewById(R.id.picture3);
-        Glide.with(this).load(images.get(0))
-                .centerCrop()
-                .placeholder(R.drawable.ic_launcher_background)
-                .error(R.drawable.ic_launcher_background)
-                .into(image1);
-        image1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(images != null || !images.isEmpty()){
-                    intent.putExtra("image_uri", images.get(0));
-                    startActivity(intent);
+        if(images.size() >= 1){
+            image1 = (ImageView) findViewById(R.id.picture1);
+
+            Glide.with(this).load(images.get(0))
+                    .centerCrop()
+                    .placeholder(R.drawable.ic_launcher_background)
+                    .error(R.drawable.ic_launcher_background)
+                    .into(image1);
+
+            image1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if(images != null || !images.isEmpty()){
+                        intent.putExtra("image_uri", images.get(0));
+                        startActivityForResult(intent, REQUEST_CODE_IMAGE);
+                    }
                 }
-            }
-        });
-        Glide.with(this).load(images.get(1))
-                .centerCrop()
-                .placeholder(R.drawable.ic_launcher_background)
-                .error(R.drawable.ic_launcher_background)
-                .into(image2);
-        image2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(images != null || !images.isEmpty()){
-                    intent.putExtra("image_uri", images.get(1));
-                    startActivity(intent);
+            });
+        }
+
+        if(images.size() >= 2){
+            image2 = (ImageView) findViewById(R.id.picture2);
+
+            Glide.with(this).load(images.get(1))
+                    .centerCrop()
+                    .placeholder(R.drawable.ic_launcher_background)
+                    .error(R.drawable.ic_launcher_background)
+                    .into(image2);
+
+            image2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if(images != null || !images.isEmpty()){
+                        intent.putExtra("image_uri", images.get(1));
+                        startActivityForResult(intent, REQUEST_CODE_IMAGE);
+                    }
                 }
-            }
-        });
-        Glide.with(this).load(images.get(2))
-                .centerCrop()
-                .placeholder(R.drawable.ic_launcher_background)
-                .error(R.drawable.ic_launcher_background)
-                .into(image3);
-        image3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(images != null || !images.isEmpty()){
-                    intent.putExtra("image_uri", images.get(2));
-                    startActivity(intent);
+            });
+        }
+        if(images.size() >= 3){
+            image3 = (ImageView) findViewById(R.id.picture3);
+
+            Glide.with(this).load(images.get(2))
+                    .centerCrop()
+                    .placeholder(R.drawable.ic_launcher_background)
+                    .error(R.drawable.ic_launcher_background)
+                    .into(image3);
+            image3.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if(images != null || !images.isEmpty()){
+                        intent.putExtra("image_uri", images.get(2));
+                        startActivityForResult(intent, REQUEST_CODE_IMAGE);
+                    }
                 }
-            }
-        });
+            });
+        }
+
     }
 
     public ArrayList<String> fn_imagespath() {
@@ -163,6 +178,23 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
             }
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (resultCode == Activity.RESULT_OK && requestCode == REQUEST_CODE_IMAGE) {
+            boolean deleted = data.getBooleanExtra("deleted", false);
+            if(deleted == true){
+                fn_imagespath();
+                gv_folder = (GridView) findViewById(R.id.galleryGridView);
+                gv_folder.setAdapter(new ImageAdapterCustom(this, images));
+                setCurrentImage();
+            }
+        } else {
+            Log.e("Error: ", "not found");
         }
     }
 }

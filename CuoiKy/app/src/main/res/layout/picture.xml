@@ -11,9 +11,9 @@
     <ImageView
         android:id="@+id/picture"
         android:layout_width="match_parent"
-        android:layout_height="670dp"
-        tools:srcCompat="@tools:sample/avatars"
-        android:scaleType="fitXY"/>
+        android:layout_height="536dp"
+        android:scaleType="fitXY"
+        tools:srcCompat="@tools:sample/avatars" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -21,7 +21,7 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/button7"
+            android:id="@+id/btnMore"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"

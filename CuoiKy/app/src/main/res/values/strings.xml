@@ -2,4 +2,5 @@
     <string name="app_name">Simple Gallery</string>
     <string name="main_title">MY GALERY</string>
     <string name="main_featured">Featured</string>
+    <string name="facebook_app_id">1010361842778599</string>
 </resources>
