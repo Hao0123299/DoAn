@@ -34,6 +34,10 @@ public class MainActivity extends AppCompatActivity {
     GridView gv_folder;
     private static final int REQUEST_PERMISSIONS = 100;
     private static final int REQUEST_CODE_IMAGE = 400;
+    public static final int CAMERA_PERM_CODE = 101;
+    public static final int DETAIL_CODE = 102 ;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

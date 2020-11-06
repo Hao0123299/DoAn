@@ -34,6 +34,7 @@
         </activity>
         <activity android:name=".PictureActivity"></activity>
         <activity android:name=".MoreActivity"></activity>
+        <activity android:name=".Information"></activity>
         <provider android:authorities="com.facebook.app.FacebookContentProvider1010361842778599"
             android:name="com.facebook.FacebookContentProvider"
             android:exported="true"/>

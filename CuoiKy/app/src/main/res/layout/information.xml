@@ -28,14 +28,14 @@
         <TextView
             android:id="@+id/textView8"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="29dp"
             android:layout_weight="1"
             android:text="Timeshot:" />
 
         <TextView
-            android:id="@+id/textView9"
+            android:id="@+id/txtDate"
             android:layout_width="193dp"
-            android:layout_height="wrap_content"
+            android:layout_height="29dp"
             android:layout_weight="1"
             android:text="TextView" />
     </LinearLayout>
@@ -49,14 +49,14 @@
         <TextView
             android:id="@+id/textView10"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_weight="1"
             android:text="Image name:" />
 
         <TextView
-            android:id="@+id/textView11"
+            android:id="@+id/txtFileName"
             android:layout_width="210dp"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_weight="1"
             android:text="TextView" />
     </LinearLayout>
@@ -70,15 +70,16 @@
         <TextView
             android:id="@+id/textView15"
             android:layout_width="210dp"
-            android:layout_height="wrap_content"
+            android:layout_height="29dp"
             android:layout_weight="1"
             android:text="Direction:" />
 
         <TextView
-            android:id="@+id/textView14"
+            android:id="@+id/txtPath"
             android:layout_width="341dp"
-            android:layout_height="wrap_content"
+            android:layout_height="29dp"
             android:layout_weight="1"
             android:text="TextView" />
     </LinearLayout>
+
 </LinearLayout>

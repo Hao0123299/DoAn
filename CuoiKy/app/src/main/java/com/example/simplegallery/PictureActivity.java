@@ -44,6 +44,15 @@ public class PictureActivity extends Activity {
                 .into(picturesView);
 
         Button btnMore = (Button) findViewById(R.id.btnMore);
+        Button btnDetail = (Button) findViewById(R.id.btnDetail);
+        btnDetail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent moreIntent = new Intent(PictureActivity.this, Information.class);
+                moreIntent.putExtra("imagePath", image);
+                startActivity(moreIntent);
+            }
+        });
         btnMore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -52,6 +61,7 @@ public class PictureActivity extends Activity {
                 startActivityForResult(moreIntent, 400);
             }
         });
+
     }
 
     @Override
